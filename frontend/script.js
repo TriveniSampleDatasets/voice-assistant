@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     recognition.onstart = () => {
         isRecording = true;
-        statusText.textContent = "Listening... 👂";
+        statusText.textContent = "Listening...";
         recordButton.classList.add("is-recording");
     };
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         recordButton.classList.remove("is-recording");
         
-        if (statusText.textContent === "Listening... 👂") {
+        if (statusText.textContent === "Listening...") {
             statusText.textContent = "Click the mic to speak";
         }
     };
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const transcript = event.results[0][0].transcript;
         console.log("Transcript:", transcript);
-        statusText.textContent = `You said: "${transcript}" (Processing... 🤔)`;
+        statusText.textContent = `You said: "${transcript}" (Processing...)`;
 
         try {
             console.log("Sending fetch request to backend with Session ID:", SESSION_ID);
